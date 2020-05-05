@@ -1,0 +1,39 @@
+
+
+<input
+type="text"
+class="form-control"
+placeholder="Название"
+id="kek" #kek>
+<select class="custom-select" id="vkl" #vkl>
+  <option value="green">Включен</option>
+  <option value="red" >Выключен</option>
+  
+</select >
+<button class="btn btn-danger" (click)="AddCard(kek.value,vkl.value)">Добавить карточку</button>
+
+
+
+
+<div class="container">
+  <div class="row">
+      <div class="card"
+          style="text-align: center; color: black;"
+          *ngFor="let cartochki of cartochki"
+          [style.background-color]="cartochki.color"
+          
+      >
+          <div class="card-body">
+            <h5 class="card-title">{{ cartochki.id1 }}</h5>
+            <p class="card-text">{{ cartochki.name }}</p>
+            <a 
+              href="#" 
+              class="btn btn-danger" 
+              (click)="DeleteCard(cartochki.id1)"
+            >
+              УДАЛИТЬ
+            </a>
+          </div>
+      </div>
+  </div>
+</div>
